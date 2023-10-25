@@ -16,7 +16,7 @@ class CLL:
     def is_empty(self):
         return self.last == None
 
-#------------------ insertion in singly linked list ---------------------#
+#------------------ insertion in circular linked list ---------------------#
 
     def insert_at_start(self,data):
         N = Node(data)
