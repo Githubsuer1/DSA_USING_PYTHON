@@ -5,7 +5,7 @@ class Node:
         self.item = item
         self.next = next
 
-#-------------- DDL class to implement doubly linked list-------------#
+#-------------- DLL class to implement doubly linked list-------------#
 class DLL:
     def __init__(self, start = None):
         self.start = start
