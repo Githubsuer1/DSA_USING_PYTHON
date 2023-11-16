@@ -6,26 +6,26 @@ class Node:
         self.next = next
 
 class Queue:
-    def __init__(self,last=None):
-        self.last = last
+    def __init__(self):
+        self.front = front
+        self.rear = rear
         self.itemCount = 0
 
     def is_empty(self):
-        return self.last == None
+        return self.front == None
 
-    def push(self,data):
+    def enqueue(self,data):
         N = Node(data)
-        if not self.is_empty():
-            N.next = self.last.next
-            self.last.next = N
-            self.last = N
+        if self.is_empty():
+            self.front = N
+            self.rear = N
         else:
-            N.next = N
-            self.last = N
+            self.rear.next = N
+            self.rear = N
         self.itemCount+=1
 
 
-    def pop(self):
+    def dequeue(self):
         if not self.is_empty():
             if self.last.next == self.last:
                 self.last = None
