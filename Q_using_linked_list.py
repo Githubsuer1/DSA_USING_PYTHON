@@ -27,17 +27,24 @@ class Queue:
 
     def dequeue(self):
         if not self.is_empty():
-            if self.last.next == self.last:
-                self.last = None
+            if self.front == self.rear:
+                self.front = None
+                self.rear = None
             else:
-                self.last.next = self.last.next.next
+                self.front = self.front.next
             self.itemCount-=1
         else:
             raise IndexError("Oh oh, queue is empty!")
 
-    def peek(self):
+    def get_front(self):
         if not self.is_empty():
-            return self.last.next.item
+            return self.front.item
+        else:
+            raise IndexError("Oh oh, queue is empty!")
+
+    def get_rear(self):
+        if not self.is_empty(self):
+            return self.rear.item
         else:
             raise IndexError("Oh oh, queue is empty!")
 
@@ -49,45 +56,27 @@ class Queue:
 
     def display(self):
         if not self.is_empty():
-            temp = self.last.next
-            while(temp != self.last):
+            temp = self.front
+            while temp is not None:
                 print(temp.item,end=" ")
-                temp = temp.next 
-            print(temp.item)
+                temp = temp.next
         else:
-            raise IndexError("Oh oh, queue is empty!")
-
-myq = Queue()
-myq.push(10)
-myq.push(20)
-myq.push(30)
-myq.push(40)
-
-myq.pop()
-myq.pop()
-myq.pop()
-myq.pop()
-
-myq.display()
-
-# myq.display()
-# print(myq.peek())
-
-# myq.pop()
-# myq.display()
-# print(myq.peek())
+            raise IndexError('oh oh, queue is empty!')
 
 
-# myq.push(100)
-# myq.display()
-# print(myq.peek())
 
+obj = Queue()
 
-# myq.pop()
-# myq.display()
-# print(myq.peek())
-# print(myq.size())
+obj.enqueue(10)
+obj.enqueue(20)
+obj.enqueue(30)
 
-# you can try above function calls to check the working of Queue.
+obj.dequeue()
+obj.dequeue()
+
+print(obj.get_front())
+print(obj.get_rear())
+obj.display()
+
 
 
