@@ -21,7 +21,7 @@ class BST:
         return self.reSearch(self.root,data)
     def reSearch(self,temp,data):
         if temp is None or temp.item == data:
-            return root 
+            return temp 
         if data < temp.item:
             return self.reSearch(temp.left,data)
         else:
@@ -78,8 +78,8 @@ bst.insert(150)
 bst.insert(250)
 bst.insert(50)
 bst.insert(350)
-print('tree in preOrder',bst.inOrder())
+print('tree in InOrder',bst.inOrder())
 print('tree in postOrder',bst.postOrder())
-print('tree in inOrder',bst.preOrder())
+print('tree in PreOrder',bst.preOrder())
 print('max item is',bst.max_value())
 print('min item is',bst.min_value())
