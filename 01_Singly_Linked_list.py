@@ -75,7 +75,7 @@ class SLL:
                     if temp.next.item == data:
                         temp.next = temp.next.next
                         break
-                temp = temp.next
+                    temp = temp.next
 
 
 #------------ Display ------------#
